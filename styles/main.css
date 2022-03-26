@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 350px;
+}
+
+main {
+  font-family: "Kalam", cursive;
+}
+
+#header-bg {
+  background-image: url(https://www.greussener-baumarkt.de/assets/images/1/GreussenerBaumarkt-2080-8f36025c.jpg);
+  background-size: cover;
+  display: flex;
+  height: 300px;
+  margin-top: 85px;
+}
+
+#logo {
+  width: 60px;
+}
+
+#task-container {
+  width: 100%;
+  max-width: 1300px;
+}
+
+.img-task {
+  height: fit-content;
+}
+
+a {
+  color: white !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #fac6c6 !important;
+}
+
+
+p {
+  margin-bottom: 0.1em;
+}
+
+.card-shadow {
+  box-shadow: 10px 10px 15px #555555;
+}
+
+footer {
+  height: 80px;
+}
