@@ -33,17 +33,6 @@ if (@$_GET['id']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Product</title>
     <?php require_once '../components/styles.php' ?>
-    <style type="text/css">
-        fieldset {
-            margin: 100px auto auto;
-            width: 70%;
-        }
-
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-    </style>
 </head>
 
 <body>

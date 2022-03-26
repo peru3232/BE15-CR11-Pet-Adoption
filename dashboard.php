@@ -60,26 +60,6 @@ mysqli_close($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adm-Dashboard</title>
     <?php require_once 'components/styles.php' ?>
-    <style>
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-
-        td {
-            text-align: left;
-            vertical-align: middle;
-        }
-
-        tr {
-            text-align: center;
-        }
-
-        .userImage {
-            width: 100px;
-            height: auto;
-        }
-    </style>
 </head>
 
 <body>

@@ -18,12 +18,6 @@ if (!$b_admin) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once '../components/styles.php' ?>
     <title>Add an animal</title>
-    <style>
-        fieldset {
-            margin: 100px auto auto;
-            width: 60%;
-        }
-    </style>
 </head>
 
 <body>

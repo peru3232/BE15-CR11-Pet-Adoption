@@ -49,19 +49,8 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete User</title>
+    <title>CR 11 Delete User</title>
     <?php require_once 'components/styles.php' ?>
-    <style>
-        fieldset {
-            margin: 100px auto auto;
-            width: 70%;
-        }
-
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-    </style>
 </head>
 
 <body>

@@ -37,17 +37,6 @@ if (@$_GET['id']) {
 <head>
     <title>Edit Product</title>
     <?php require_once '../components/styles.php' ?>
-    <style>
-        fieldset {
-            margin: 100px auto auto;
-            width: 60%;
-        }
-
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-    </style>
 </head>
 
 <body>

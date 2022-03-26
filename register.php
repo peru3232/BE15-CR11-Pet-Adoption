@@ -134,7 +134,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Registration System</title>
+    <title>CR11 User Registration</title>
     <?php require_once 'components/styles.php' ?>
 </head>
 

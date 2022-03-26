@@ -2,4 +2,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.0/css/all.css">
 <link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="../styles/main.css">
+<link rel="stylesheet" href="../../styles/main.css">
+
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />-->

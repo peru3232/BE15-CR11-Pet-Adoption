@@ -48,3 +48,27 @@ p {
 footer {
   height: 80px;
 }
+
+.img-thumbnail {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+tr {
+  text-align: center;
+}
+
+.userImage {
+  width: 100px;
+  height: auto;
+}
+
+fieldset {
+  margin: 100px auto auto;
+  width: 70%;
+}
