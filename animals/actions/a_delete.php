@@ -6,7 +6,7 @@ if (!$b_admin) {
     exit;
 }
 
-require_once '../../components/db_connect.php';
+require_once '../../components/db_usage.php';
 
 if ($_POST) {
     $id = $_POST['id'];
@@ -34,7 +34,7 @@ mysqli_close($connect);
 
 <head>
     <meta charset="UTF-8">
-    <title>Delete</title>
+    <title>CR 11 - Delete Animal Data</title>
     <?php require_once '../../components/styles.php' ?>
 </head>
 

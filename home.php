@@ -1,5 +1,5 @@
 <?php
-require_once 'components/db_connect.php';
+require_once 'components/db_usage.php';
 require_once 'components/session.php';
 
 if (!$b_signedIn) {
@@ -15,13 +15,8 @@ $userName = $password = $userNameError = $passError = $errMSG = '';
 if (isset($_POST['btn-login'])) {
 
     // prevent sql injections/ clear user invalid inputs
-    $userName = trim($_POST['userName']);
-    $userName = strip_tags($userName);
-    $userName = htmlspecialchars($userName);
-
-    $pass = trim($_POST['pass']);
-    $pass = strip_tags($pass);
-    $pass = htmlspecialchars($pass);
+    $userName = normalize($_POST['userName']);
+    $pass = normalize($_POST['pass']);
 
     if (empty($userName)) {
         $userName = true;
@@ -55,13 +50,11 @@ if (isset($_POST['btn-login'])) {
     }
 }
 
-
-
 $row = $content = '';
 $empty = '';
 
 $header = 'Our possible new friends ';
-$sql = 'SELECT * FROM animals';
+$sql = 'SELECT * FROM animals WHERE (id NOT IN (SELECT fk_pet_id FROM adoption))';
 if ($b_admin) {
     $selectBtn='Add animals';
     $selectLink="animals/create.php";
@@ -71,28 +64,36 @@ if ($b_admin) {
 }
 if (@$_GET['oldies'] == true) {
     $header .= "<span class='text-primary'>(only oldies)</span>";
-    $sql .= " WHERE age > 7";
+    $sql .= " AND (age > 7)";
     $selectBtn = 'Show ALL';
     $selectLink="home.php";
 }
 
-
-
 $result = mysqli_query($connect ,$sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        $b_admin?$extraButtons="<a href='animals/update.php?id={$row['id']}'><button class='text-center mx-1 p-2 text-light rounded-pill bg-secondary'>Edit</button></a>
-            <a href='animals/delete.php?id={$row['id']}'><button class='text-center mx-1 p-2 text-light rounded-pill bg-danger'>Delete</button></a> 
-        ":$extraButtons="";
+        $extraButtons="";
+        if ($b_admin) {
+            $extraButtons="
+            <div>
+                <a href='animals/update.php?id={$row['id']}'><button class='text-center mx-1 p-2 text-light rounded-pill bg-secondary'>Edit Data</button></a>
+                <a href='animals/delete.php?id={$row['id']}'><button class='text-center mx-1 p-2 text-light rounded-pill bg-danger justify-self-end'>Delete</button></a> 
+            </div> ";}
+        elseif ($b_user){
+            $extraButtons="
+            <a href='animals/adoption.php?id={$row['id']}'><h4 class='text-center mx-1 p-2 text-light rounded-pill bg-success'>Take me home</h4></a>          
+            ";}
+
         $content .= "
         <div class='card col-lg-3 col-md-5 col-sm-10 col-11 p-0 mx-4 mb-auto mt-3 border-2 card-shadow animate__animated animate__fadeIn'>
-            <img src='images/{$row['photo']}' class='card-img-top d-none d-sm-block img-task' alt='{$row['name']}'>
-            <h4 class='card-title text-center py-2 bg-black text-light'>{$row['name']}</h4>
+            <a href='animals/details.php?id={$row['id']}' >
+                <img src='images/{$row['photo']}' class='card-img-top d-none d-sm-block img-task' alt='{$row['name']}'>
+                <h4 class='card-title text-center py-2 bg-black text-light'>{$row['name']}</h4>
+            </a>    
             <div class='card-body text-center py-0'>
                 <p>Breed : {$row['breed']}</p>
                 <p>{$row['size']}</p>
             </div>
-            <a href='animals/details.php?id={$row['id']}'><h4 class='text-center mx-1 p-2 text-light rounded-pill bg-success'>Details</h4></a>
             $extraButtons
         </div>
 ";
@@ -107,7 +108,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codereview 11 - Pet Adoption</title>
+    <title>CR 11 - Pet Adoption Homepage</title>
 
     <!-- Stylesheets -->
     <?php require_once 'components/styles.php' ?>

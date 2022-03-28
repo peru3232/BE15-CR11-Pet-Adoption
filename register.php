@@ -1,5 +1,5 @@
 <?php
-require_once 'components/db_connect.php';
+require_once 'components/db_usage.php';
 require_once 'components/session.php';
 
 if ($b_signedIn) {
@@ -14,40 +14,13 @@ $firstName = $lastName = $email = $userName = $pass = $picture = $address = $pho
 $firstNameError = $lastNameError = $emailError = $userNameError = $passwordError = $pictureError = $addressError = $phoneNumberError = '';
 if (isset($_POST['btn-signup'])) {
 
-    // sanitise user input to prevent sql injection
-    // trim - strips whitespace (or other characters) from the beginning and end of a string
-    $firstName = trim($_POST['firstName']);
-
-
-    // strip_tags -- strips HTML and PHP tags from a string
-    $firstName = strip_tags($firstName);
-
-    // htmlspecialchars converts special characters to HTML entities
-    $firstName = htmlspecialchars($firstName);
-
-    $lastName = trim($_POST['lastName']);
-    $lastName = strip_tags($lastName);
-    $lastName = htmlspecialchars($lastName);
-
-    $email = trim($_POST['email']);
-    $email = strip_tags($email);
-    $email = htmlspecialchars($email);
-
-    $userName = trim($_POST['userName']);
-    $userName = strip_tags($userName);
-    $userName = htmlspecialchars($userName);
-
-    $phoneNumber = trim($_POST['phoneNumber']);
-    $phoneNumber = strip_tags($phoneNumber);
-    $phoneNumber = htmlspecialchars($phoneNumber);
-
-    $address = trim($_POST['address']);
-    $address = strip_tags($address);
-    $address = htmlspecialchars($address);
-
-    $pass = trim($_POST['password']);
-    $pass = strip_tags($pass);
-    $pass = htmlspecialchars($pass);
+    $firstName = normalize($_POST['firstName']);
+    $lastName = normalize($_POST['lastName']);
+    $email = normalize($_POST['email']);
+    $userName = normalize($_POST['userName']);
+    $phoneNumber = normalize($_POST['phoneNumber']);
+    $address = normalize($_POST['address']);
+    $pass = normalize($_POST['password']);
 
     $uploadError = '';
     $picture = file_upload($_FILES['picture']);
@@ -134,7 +107,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR11 User Registration</title>
+    <title>CR 11 - User Registration</title>
     <?php require_once 'components/styles.php' ?>
 </head>
 

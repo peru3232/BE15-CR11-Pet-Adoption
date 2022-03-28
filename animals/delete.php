@@ -6,7 +6,7 @@ if (!$b_admin) {
     exit;
 }
 
-require_once '../components/db_connect.php';
+require_once '../components/db_usage.php';
 
 if (@$_GET['id']) {
     $id = $_GET['id'];
@@ -31,7 +31,7 @@ if (@$_GET['id']) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Product</title>
+    <title>CR 11 - Delete Pet</title>
     <?php require_once '../components/styles.php' ?>
 </head>
 

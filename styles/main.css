@@ -24,9 +24,9 @@ main {
   max-width: 1300px;
 }
 
-.img-task {
-  height: fit-content;
-}
+/*.img-task {*/
+/*  height: fit-content;*/
+/*}*/
 
 a {
   color: white !important;
@@ -35,7 +35,6 @@ a {
 a:hover {
   color: #fac6c6 !important;
 }
-
 
 p {
   margin-bottom: 0.1em;

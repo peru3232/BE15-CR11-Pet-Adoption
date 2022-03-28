@@ -17,7 +17,7 @@ if (!$b_admin) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once '../components/styles.php' ?>
-    <title>Add an animal</title>
+    <title>CR 11 - Add an animal</title>
 </head>
 
 <body>

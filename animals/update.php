@@ -6,7 +6,7 @@ if (!$b_signedIn) {
     exit;
 }
 
-require_once '../components/db_connect.php';
+require_once '../components/db_usage.php';
 
 if (@$_GET['id']) {
     $id = $_GET['id'];
@@ -35,7 +35,7 @@ if (@$_GET['id']) {
 <html lang="en">
 
 <head>
-    <title>Edit Product</title>
+    <title>CR 11 - Update Animal Data</title>
     <?php require_once '../components/styles.php' ?>
 </head>
 

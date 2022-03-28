@@ -1,5 +1,5 @@
 <?php
-require_once '../components/db_connect.php';
+require_once '../components/db_usage.php';
 require_once '../components/session.php';
 
 $sql = "SELECT * FROM animals where `id` = $_GET[id]";
@@ -11,8 +11,9 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 $b_admin?$extraButtons="<a href='update.php?id={$row['id']}'><button class='btn btn-secondary me-3'>Edit</button></a>
             <a href='delete.php?id={$row['id']}'><button class='btn btn-danger me-3'>Delete</button></a> 
-":$extraButtons="";
-
+":(
+$b_user?$extraButtons="<a href='adoption.php?id={$row['id']}'><button class='btn btn-success px-3'>Take me home</button></a>"
+:$extraButtons="");
 $output =  "
 <h1 class='pb-3 text-center bg-warning bg-opacity-50 display-2'>Details to the choosen pet:</h1>
 <div class='row justify-content-center pt-5'>
@@ -50,7 +51,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR10 - Big Library - Details to: <?= $row['title'] ?></title>
+    <title>CR 11 - Detailspage <?= $row['title'] ?></title>
     <?php require_once '../components/styles.php'?>
 </head>
 <body>

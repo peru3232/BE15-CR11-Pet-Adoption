@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Error</title>
+        <title>CR 11 - Data Error</title>
         <?php require_once '../components/styles.php'?>
     </head>
     <body>

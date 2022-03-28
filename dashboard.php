@@ -1,6 +1,6 @@
 <?php
 
-require_once 'components/db_connect.php';
+require_once 'components/db_usage.php';
 require_once 'components/session.php';
 // if session is not set this will redirect to login page
 if (!$b_signedIn) {
@@ -58,7 +58,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adm-Dashboard</title>
+    <title>CR 11 - Adm-Dashboard</title>
     <?php require_once 'components/styles.php' ?>
 </head>
 

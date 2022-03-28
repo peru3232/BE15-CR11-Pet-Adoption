@@ -1,5 +1,5 @@
 <?php
-require_once 'components/db_connect.php';
+require_once 'components/db_usage.php';
 require_once 'components/session.php';
 
 if (!$b_admin) {
@@ -49,7 +49,7 @@ mysqli_close($connect);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR 11 Delete User</title>
+    <title>CR 11 - Delete User</title>
     <?php require_once 'components/styles.php' ?>
 </head>
 
