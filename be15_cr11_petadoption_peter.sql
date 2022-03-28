@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 26. Mrz 2022 um 17:59
+-- Erstellungszeit: 28. Mrz 2022 um 08:56
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 8.0.13
 
@@ -32,7 +32,7 @@ USE `be15_cr11_petadoption_peter`;
 CREATE TABLE `adoption` (
   `fk_userName` varchar(16) NOT NULL,
   `fk_pet_id` int(11) NOT NULL,
-  `date` date NOT NULL
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -58,8 +58,16 @@ CREATE TABLE `animals` (
 --
 
 INSERT INTO `animals` (`id`, `breed`, `name`, `location`, `description`, `size`, `age`, `hobbies`, `photo`) VALUES
-(1, 'American Shorthair', 'Schnurrli', 'Bredlway 11', 'Schnurrli was a really kind cat who likes to sleep the whole day long', 'small', 7, 'be petted, playing with budgies', 'Mietzi.jpg'),
-(2, 'Lion', 'Puschl', 'sherwood forrest', '', 'xx-large', 11, 'eating kids', 'Puschl.jpg');
+(1, 'American Shorthair', 'Schnurrli', 'Bredlway 11', 'Schnurrli was a really kind cat who likes to sleep the whole day long', 'small', 7, 'be petted, playing with budgies', '624155ddc273a.jpg'),
+(2, 'Lion', 'Puschl', 'sherwood forrest', 'for everyone who is looking for a really big challenge', 'xx-large', 11, 'eating kids', '6241558c26322.jpg'),
+(11, 'American Bobtail[', 'Bagir', 'Homeway 23', 'a little shy but very sweet', 'small', 9, 'play with other cats, like sleeping', '623f6d9ab2805.jpg'),
+(12, 'Australian Mist', 'Lilly', 'under the table 1', 'little cat who like kids', 'x-small', 1, 'purr and enjoy', '62415791a0622.jpg'),
+(13, 'Cyprus', 'Felix', 'in the garden', 'chef of the house', 'small', 3, 'fight with others', '624158c904b98.jpg'),
+(14, 'Gscheckert', 'Svinka Pepper', 'im Dreck 33', 'sweet and kind playing partner', 'medium', 0, 'grunt and play', '62415967b6437.jpg'),
+(15, 'who knows', 'Rosalinde', 'Behind the house', 'some more infos', 'medium', 1, 'play with sticks and go for a walk', '62415a04e932f.jpg'),
+(16, 'Amirican sheleter', 'Gaff Gaff', 'Rosegarden 17', 'always alert and very child friendly', 'small', 8, 'play with the tail', '62415a7d8b9d9.jpg'),
+(17, 'Irish Long-eared', 'Charlie', 'between the house and the door', 'allways waiting for playing something', 'big', 13, 'playing frisby and swimming', '62415b6bc25af.jpg'),
+(18, 'Hastered', 'Ready', 'Underfield 3', 'always alert and prepared for anything', 'x-small', 2, 'sit and wait', '62415bcf44f74.jpg');
 
 -- --------------------------------------------------------
 
@@ -118,7 +126,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `animals`
 --
 ALTER TABLE `animals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints der exportierten Tabellen
