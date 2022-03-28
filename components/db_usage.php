@@ -1,4 +1,11 @@
 <?php
+
+function normalize ($value): string {
+    $val = trim($value);
+    $val = strip_tags($val);
+    return htmlspecialchars($val);
+}
+
 //
 //$hostname = "173.212.235.205";
 //$username = "wochinge_admin";
